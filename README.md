@@ -5,3 +5,12 @@
 
 
 This is an ongoing project to develop a DarkSouls-like game utilizing the latest features of Unity. 
+
+
+**Controls:**
+
+* AWSD - Movement
+* LMB - Light Attack
+* RMB - Heavy Attack
+* Movement + Shift - Roll
+* Shift - Step back 
