@@ -12,8 +12,12 @@ namespace ALO
         DamageCollider leftHandDamageCollider;
         DamageCollider rightHandDamageCollider;
 
+        Animator animator;
+
         private void Awake()
         {
+            animator = GetComponent<Animator>();
+
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
 
             foreach(WeaponHolderSlot weaponSlot in weaponHolderSlots)
@@ -36,12 +40,35 @@ namespace ALO
                 leftHandSlot.LoadWeaponModel(weaponItem);
                 leftHandDamageCollider = 
                     leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+
+                #region Handle Left Weapon Idle Animations
+                if (weaponItem != null)
+                {
+                    animator.CrossFade(weaponItem.left_Hand_Idle, 0.2f);
+                }
+                else
+                {
+                    animator.CrossFade("Left Arm Empty", 0.2f);
+                }
+                #endregion
             }
             else
             {
                 rightHandSlot.LoadWeaponModel(weaponItem);
                 rightHandDamageCollider = 
                     rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+
+                #region Handle Right Weapon Idle Animations
+
+                if (weaponItem != null)
+                {
+                    animator.CrossFade(weaponItem.right_Hand_Idle, 0.2f);
+                }
+                else
+                {
+                    animator.CrossFade("Right Arm Empty", 0.2f);
+                }
+                #endregion
             }
         }
 
