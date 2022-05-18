@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 2802573728249981110}
   - component: {fileID: 1246202285728573203}
   - component: {fileID: 3940527807023633369}
+  - component: {fileID: 2508039444412729295}
+  - component: {fileID: 8970586117295498518}
   m_Layer: 0
   m_Name: Broadsword_1
   m_TagString: Untagged
@@ -115,6 +117,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2508039444412729295
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291970084127306252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21625303, y: 0.8092368, z: 0.08534306}
+  m_Center: {x: -0.00000036007776, y: 0.18981478, z: -0.000000033716713}
+--- !u!114 &8970586117295498518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291970084127306252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92799bb6c401fe844a37ee3ed26f29a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeaponDamage: 25
 --- !u!1 &7382045964423495380
 GameObject:
   m_ObjectHideFlags: 0

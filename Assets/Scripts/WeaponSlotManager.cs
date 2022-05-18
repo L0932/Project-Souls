@@ -9,6 +9,9 @@ namespace ALO
         WeaponHolderSlot leftHandSlot;
         WeaponHolderSlot rightHandSlot;
 
+        DamageCollider leftHandDamageCollider;
+        DamageCollider rightHandDamageCollider;
+
         private void Awake()
         {
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
@@ -31,11 +34,40 @@ namespace ALO
             if (isLeft)
             {
                 leftHandSlot.LoadWeaponModel(weaponItem);
+                leftHandDamageCollider = 
+                    leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
             }
             else
             {
                 rightHandSlot.LoadWeaponModel(weaponItem);
+                rightHandDamageCollider = 
+                    rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
             }
         }
+
+        #region Handle Weapon's Damage Collider
+       
+
+        public void OpenRightDamageCollider()
+        {
+            rightHandDamageCollider.EnableDamageCollider();
+        }
+
+        public void OpenLeftDamageCollider()
+        {
+            leftHandDamageCollider.EnableDamageCollider();
+        }
+
+        public void CloseRightHandDamageCollider()
+        {
+            rightHandDamageCollider.DisableDamageCollider();
+        }
+
+        public void CloseLeftHandDamageCollider()
+        {
+            leftHandDamageCollider.DisableDamageCollider();
+        }
+
+        #endregion
     }
 }
