@@ -191,7 +191,7 @@ namespace ALO
                 {
                     if (inAirTimer > 0.5f)
                     {
-                        Debug.Log("You were in the air for " + inAirTimer);
+                        //Debug.Log("You were in the air for " + inAirTimer);
                         animatorHandler.PlayTargetAnimation("Soft Landing", true);
                     }
                     else

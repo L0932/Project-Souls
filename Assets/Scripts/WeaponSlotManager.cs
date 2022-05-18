@@ -48,12 +48,12 @@ namespace ALO
         #region Handle Weapon's Damage Collider
        
 
-        public void OpenRightDamageCollider()
+        public void OpenRightHandDamageCollider()
         {
             rightHandDamageCollider.EnableDamageCollider();
         }
 
-        public void OpenLeftDamageCollider()
+        public void OpenLeftHandDamageCollider()
         {
             leftHandDamageCollider.EnableDamageCollider();
         }
