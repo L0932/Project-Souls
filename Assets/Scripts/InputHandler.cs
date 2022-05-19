@@ -16,6 +16,11 @@ namespace ALO
         public bool rb_Input;
         public bool rt_Input;
 
+        public bool d_Pad_Up;
+        public bool d_Pad_Down;
+        public bool d_Pad_Left;
+        public bool d_Pad_Right;
+
         public bool rollFlag;
         public bool sprintFlag;
         public bool comboFlag;
@@ -58,6 +63,7 @@ namespace ALO
             MoveInput(delta);
             HandleRollInput(delta);
             HandleAttackInput(delta);
+            HandleQuickSlotInput();
         }
 
         private void MoveInput(float delta)
@@ -93,9 +99,12 @@ namespace ALO
 
         private void HandleAttackInput(float delta)
         {
+            if (playerInventory.currentRightWeaponIndex < 0)
+                return;
+
             inputActions.PlayerActions.RB.performed += i => rb_Input = true;
             inputActions.PlayerActions.RT.performed += i => rt_Input = true;
-
+            
             if (rb_Input)
             {
                 if (playerManager.canDoCombo)
@@ -119,6 +128,21 @@ namespace ALO
             if (rt_Input)
             {
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+            }
+        }
+
+        private void HandleQuickSlotInput()
+        {
+            inputActions.PlayerQuickSlots.DPadRight.performed += i => d_Pad_Right = true;
+            inputActions.PlayerQuickSlots.DPadLeft.performed += i => d_Pad_Left = true;
+
+            if (d_Pad_Right)
+            {
+                playerInventory.ChangeRightWeapon();
+            }
+            else if (d_Pad_Left)
+            {
+                playerInventory.ChangeLeftWeapon();
             }
         }
     }
