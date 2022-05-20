@@ -124,6 +124,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &32803098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 32803098, guid: a7e98ca30b06ce8408c692ac273569e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2826441550451960687}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc860adc7e4f5a45968640d5dd842b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &73294887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,6 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85fdde27b6259641ab3b6f15dc06db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackingWeapon: {fileID: 0}
 --- !u!1 &1058368875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1576,11 @@ MonoBehaviour:
   healthLevel: 10
   maxHealth: 0
   currentHealth: 0
+  staminaLevel: 10
+  maxStamina: 0
+  currentStamina: 0
   healthBar: {fileID: 1787902945}
+  staminaBar: {fileID: 32803098}
 --- !u!1 &1489779328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2715566404302941441, guid: 5608a3dfd06c3ec40868b68fa2557ac5,
@@ -2122,6 +2139,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 79359768, guid: a7e98ca30b06ce8408c692ac273569e4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79359768, guid: a7e98ca30b06ce8408c692ac273569e4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2826441548826381701, guid: a7e98ca30b06ce8408c692ac273569e4,
         type: 3}
       propertyPath: m_AnchorMax.x
