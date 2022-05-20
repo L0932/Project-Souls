@@ -34,16 +34,13 @@ namespace ALO
         {
             currentRightWeaponIndex = currentRightWeaponIndex + 1;
 
-            if (currentRightWeaponIndex == 0 && weaponsInRightHandSlots[0] != null)
+            if (currentRightWeaponIndex > weaponsInRightHandSlots.Length - 1)
             {
-                rightWeapon = weaponsInRightHandSlots[currentRightWeaponIndex];
-                weaponSlotManager.LoadWeaponOnSlot(weaponsInRightHandSlots[currentRightWeaponIndex], false);
+                currentRightWeaponIndex = -1;
+                rightWeapon = unarmedWeapon;
+                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
             }
-            else if (currentRightWeaponIndex == 0 && weaponsInRightHandSlots[0] == null)
-            {
-                currentRightWeaponIndex = currentRightWeaponIndex + 1;
-            }
-            else if (currentRightWeaponIndex == 1 && weaponsInRightHandSlots[1] != null)
+            else if (weaponsInRightHandSlots[currentRightWeaponIndex] != null)
             {
                 rightWeapon = weaponsInRightHandSlots[currentRightWeaponIndex];
                 weaponSlotManager.LoadWeaponOnSlot(weaponsInRightHandSlots[currentRightWeaponIndex], false);
@@ -51,13 +48,6 @@ namespace ALO
             else
             {
                 currentRightWeaponIndex = currentRightWeaponIndex + 1;
-            }
-
-            if (currentRightWeaponIndex > weaponsInRightHandSlots.Length -1)
-            {
-                currentRightWeaponIndex = -1;
-                rightWeapon = unarmedWeapon;
-                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
             }
         }
 
@@ -65,16 +55,13 @@ namespace ALO
         {
             currentLeftWeaponIndex = currentLeftWeaponIndex + 1;
 
-            if (currentLeftWeaponIndex == 0 && weaponsInLeftHandSlots[0] != null)
+            if (currentLeftWeaponIndex > weaponsInLeftHandSlots.Length - 1)
             {
-                leftWeapon = weaponsInLeftHandSlots[currentLeftWeaponIndex];
-                weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[currentLeftWeaponIndex], true);
+                currentLeftWeaponIndex = -1;
+                leftWeapon = unarmedWeapon;
+                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
             }
-            else if (currentLeftWeaponIndex == 0 && weaponsInLeftHandSlots[0] == null)
-            {
-                currentLeftWeaponIndex = currentLeftWeaponIndex + 1;
-            }
-            else if (currentLeftWeaponIndex == 1 && weaponsInLeftHandSlots[1] != null)
+            else if (weaponsInLeftHandSlots[currentLeftWeaponIndex] != null)
             {
                 leftWeapon = weaponsInLeftHandSlots[currentLeftWeaponIndex];
                 weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[currentLeftWeaponIndex], true);
@@ -82,13 +69,6 @@ namespace ALO
             else
             {
                 currentLeftWeaponIndex = currentLeftWeaponIndex + 1;
-            }
-
-            if (currentLeftWeaponIndex > weaponsInLeftHandSlots.Length - 1)
-            {
-                currentLeftWeaponIndex = -1;
-                leftWeapon = unarmedWeapon;
-                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
             }
         }
     }

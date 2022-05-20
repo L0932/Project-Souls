@@ -14,9 +14,12 @@ namespace ALO
 
         Animator animator;
 
+        QuickSlotsUI quickSlotsUI;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
+            quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
 
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
 
@@ -40,6 +43,7 @@ namespace ALO
                 leftHandSlot.LoadWeaponModel(weaponItem);
                 leftHandDamageCollider = 
                     leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+                quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
 
                 #region Handle Left Weapon Idle Animations
                 if (weaponItem != null)
@@ -57,6 +61,7 @@ namespace ALO
                 rightHandSlot.LoadWeaponModel(weaponItem);
                 rightHandDamageCollider = 
                     rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+                quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
 
                 #region Handle Right Weapon Idle Animations
 
