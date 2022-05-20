@@ -9,8 +9,9 @@ This is an ongoing project to develop a DarkSouls-like game utilizing the latest
 
 **Controls:**
 
-* AWSD - Movement
-* LMB - Light Attack
-* RMB - Heavy Attack
-* Movement + Shift - Roll
-* Shift - Step back 
+* AWSD: Movement
+* LMB: Light Attack
+* RMB: Heavy Attack
+* Movement + Shift: Roll
+* Shift: Step back 
+* Cycle between Weapons: Left / Right Arrows
