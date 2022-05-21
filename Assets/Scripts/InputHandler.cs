@@ -12,6 +12,7 @@ namespace ALO
         public float mouseX;
         public float mouseY;
 
+        public bool a_Input;
         public bool b_Input;
         public bool rb_Input;
         public bool rt_Input;
@@ -64,6 +65,7 @@ namespace ALO
             HandleRollInput(delta);
             HandleAttackInput(delta);
             HandleQuickSlotInput();
+            HandleInteractionInput();
         }
 
         private void MoveInput(float delta)
@@ -144,6 +146,11 @@ namespace ALO
             {
                 playerInventory.ChangeLeftWeapon();
             }
+        }
+
+        private void HandleInteractionInput()
+        {
+            inputActions.PlayerActions.A.performed += i => a_Input = true;
         }
     }
 }
