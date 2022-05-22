@@ -15,6 +15,7 @@ This is an ongoing project to develop a DarkSouls-like game utilizing the latest
 * Light Attack Combo: (timed) LMB + LMB  / RB + RB
 * Heavy Attack: RMB / RT (Gamepad)
 * Roll: Movement + Shift / X (Gamepad)
+* Jump: Movement + Space
 * Step back: Shift / X (Gamepad)
 * Cycle between Weapons: Left / Right Arrows / D-Pad Directions
 * Pickup Item / Close popup: F (Keyboard) / A (Gamepad)
