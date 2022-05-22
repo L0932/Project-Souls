@@ -16,6 +16,7 @@ namespace ALO
         public bool b_Input;
         public bool rb_Input;
         public bool rt_Input;
+        public bool jump_Input;
 
         public bool d_Pad_Up;
         public bool d_Pad_Down;
@@ -66,6 +67,7 @@ namespace ALO
             HandleAttackInput(delta);
             HandleQuickSlotInput();
             HandleInteractionInput();
+            HandleJumpInput();
         }
 
         private void MoveInput(float delta)
@@ -152,5 +154,11 @@ namespace ALO
         {
             inputActions.PlayerActions.A.performed += i => a_Input = true;
         }
+
+        private void HandleJumpInput()
+        {
+            inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
+        }
+
     }
 }
