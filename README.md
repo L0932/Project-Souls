@@ -17,4 +17,4 @@ This is an ongoing project to develop a DarkSouls-like game utilizing the latest
 * Roll: Movement + Shift / X (Gamepad)
 * Step back: Shift / X (Gamepad)
 * Cycle between Weapons: Left / Right Arrows / D-Pad Directions
-* Close popup description: F (Keyboard) / A (Gamepad)
+* Pickup Item / Close popup: F (Keyboard) / A (Gamepad)
