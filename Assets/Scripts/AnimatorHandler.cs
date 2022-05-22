@@ -8,6 +8,7 @@ namespace ALO
     {
         public Animator anim;
         public bool canRotate;
+        public bool isJumping = false;
 
         PlayerLocomotion playerLocomotion;
         PlayerManager playerManager;
@@ -25,6 +26,18 @@ namespace ALO
 
             vertical = Animator.StringToHash("Vertical");
             horizontal = Animator.StringToHash("Horizontal");
+        }
+
+        private void LateUpdate()
+        {
+            if (isJumping)
+            {
+                playerLocomotion.playerCollider.height = anim.GetFloat("ColliderHeight");
+            }
+            else
+            {
+                playerLocomotion.playerCollider.height = 1.3f;
+            }
         }
 
         public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement, bool isSprinting)
@@ -97,6 +110,15 @@ namespace ALO
             anim.CrossFade(targetAnimation, 0.2f);
         }
 
+        public void CanJump()
+        {
+            isJumping = true;
+        }
+
+        public void StopJump()
+        {
+            isJumping = false;
+        }
         public void CanRotate()
         {
             canRotate = true;

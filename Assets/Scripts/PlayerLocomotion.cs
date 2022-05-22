@@ -13,6 +13,8 @@ namespace ALO
         Vector3 moveDirection;
 
         [HideInInspector]
+        public CapsuleCollider playerCollider;
+        [HideInInspector]
         public Transform myTransform;
         [HideInInspector]
         public AnimatorHandler animatorHandler;
@@ -45,6 +47,7 @@ namespace ALO
         void Start()
         {
             playerManager = GetComponent<PlayerManager>();
+            playerCollider = GetComponent<CapsuleCollider>();
             rigidBody = GetComponent<Rigidbody>();
             inputHandler = GetComponent<InputHandler>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();

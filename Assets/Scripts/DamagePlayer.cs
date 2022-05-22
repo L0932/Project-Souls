@@ -10,7 +10,6 @@ namespace ALO
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("OnTriggerEnter!!!!");
             PlayerStats playerStats = other.transform.root.GetComponent<PlayerStats>();
 
             if (playerStats != null)
