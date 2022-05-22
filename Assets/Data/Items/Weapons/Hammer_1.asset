@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hammer_1
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 95ad38682193fad4b92922c57e038b25, type: 3}
-  itemName: Hammer_01
+  itemName: Hammer
   modelPrefab: {fileID: 1509061489490934209, guid: 2e00052d403b1bd45839aff5779ec6c3,
     type: 3}
   isUnarmed: 0

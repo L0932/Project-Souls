@@ -30,14 +30,18 @@ namespace ALO
             animatorHandler.PlayTargetAnimation("Taking Item", true);
             playerInventory.weaponsInventory.Add(weapon);
 
-            StartCoroutine(DelayDestroy());
+            StartCoroutine(Delay());
+
+            playerManager.SetItemNameUIText(weapon.itemName, true);
+            playerManager.SetUIImageSprite(weapon.itemIcon);
+
+            Destroy(gameObject);
         }
 
-        IEnumerator DelayDestroy()
+        IEnumerator Delay()
         {
             yield return new WaitForSeconds(1.5f);
 
-            Destroy(gameObject);
         }
     }
 }

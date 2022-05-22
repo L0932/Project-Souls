@@ -16,7 +16,7 @@ namespace ALO
 
         public virtual void Interact(PlayerManager playerManager)
         {
-            Debug.Log("Object has been interacted with.");
+            //Debug.Log("Object has been interacted with.");
         }
     }
 }

@@ -12,6 +12,9 @@ namespace ALO
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
 
+        public InteractableUI textHintUI;
+        public InteractableUI itemNameUI;
+
         public bool isInteracting;
 
         [Header("Player Flags")]
@@ -30,6 +33,7 @@ namespace ALO
             inputHandler = GetComponent<InputHandler>();
             anim = GetComponentInChildren<Animator>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
+            //interactableUI = FindObjectOfType<InteractableUI>();
         }
 
         void Update()
@@ -91,9 +95,9 @@ namespace ALO
 
                     if (interactableObject != null)
                     {
-                        string text = interactableObject.interactableText;
+                        string interactableText = interactableObject.interactableText;
 
-                        // Set UI Text
+                        SetHintUIText(interactableText, true);
 
                         if (inputHandler.a_Input)
                         {
@@ -101,7 +105,37 @@ namespace ALO
                         }
                     }
                 }
+                else
+                {
+                    SetHintUIText("", false);
+                    
+                    if (inputHandler.a_Input)
+                    {
+                        SetItemNameUIText("", false);
+                    }
+                }
             }
+        }
+
+        public void SetHintUIText(string text, bool activeState)
+        {
+            if (textHintUI == null) return;
+         
+            textHintUI.SetText(text);
+            textHintUI.gameObject.SetActive(activeState);
+        }
+
+        public void SetItemNameUIText(string text, bool activeState)
+        {
+            if (itemNameUI == null) return;
+
+            itemNameUI.SetText(text);
+            itemNameUI.gameObject.SetActive(activeState);
+        }
+
+        public void SetUIImageSprite(Sprite sprite)
+        {
+            itemNameUI.SetUIImageSprite(sprite);
         }
     }
 }
