@@ -171,16 +171,19 @@ namespace ALO
 
             if (inventory_Input)
             {
-                Debug.Log("Intenry input is tru tv");
                 inventoryFlag = !inventoryFlag;
 
                 if (inventoryFlag)
                 {
                     uiManager.OpenSelectWindow();
+                    uiManager.UpdateUI();
+                    uiManager.hudWindow.SetActive(false);
                 }
                 else
                 {
                     uiManager.CloseSelectWindow();
+                    uiManager.CloseAllIntentoryWindows();
+                    uiManager.hudWindow.SetActive(true);
                 }
             }
         }
